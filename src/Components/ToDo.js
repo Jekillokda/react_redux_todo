@@ -1,6 +1,7 @@
-import React, { Component } from "react"
+import React, { Component, useState  } from "react"
 import { connect } from 'react-redux';
 import {changeTask } from "../actions/actions";
+//const [text] = useState(0);
 class ToDo extends Component{
     constructor(props){
         super(props)
@@ -8,6 +9,7 @@ class ToDo extends Component{
         inputValue: this.props.task.text
         }
     }
+
     updateTask= e =>{
         e.preventDefault();
         this.setState({
