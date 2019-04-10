@@ -14,9 +14,12 @@ class App extends Component {
       </div>
     )
   }
-} const mapStateToProps = (store) => {
+} 
+
+const mapStateToProps = (store) => {
   return {
       tasks: store
   }
 }
+
 export default connect(mapStateToProps)(App);

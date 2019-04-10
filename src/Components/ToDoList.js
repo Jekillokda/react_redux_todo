@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ToDo from './ToDo'
 import { connect } from 'react-redux';
 import {changeTask,deleteTask,completeTask } from "../actions/actions";
+
 class ToDoList extends Component {
     onDelete = (id) => {
         this.props.deleteTask(id)
