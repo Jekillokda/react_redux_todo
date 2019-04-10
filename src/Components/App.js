@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ToDoInput from './ToDoInput'
 import ToDoList from './ToDoList'
 import { connect } from 'react-redux';
 
-class App extends Component {
-  render() {
+function App (){
     return (
       <div>
         <h1>This is ToDo List Single Page App</h1> 
@@ -13,7 +12,6 @@ class App extends Component {
         <ToDoList />
       </div>
     )
-  }
 } 
 
 const mapStateToProps = (store) => {
