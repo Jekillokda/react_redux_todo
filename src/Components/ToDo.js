@@ -1,28 +1,16 @@
-import React, { Component, useState  } from "react"
+import React, { useState  } from "react"
 import { connect } from 'react-redux';
 import {changeTask } from "../actions/actions";
-//const [text] = useState(0);
-class ToDo extends Component{
-    constructor(props){
-        super(props)
-         this.state = {
-        inputValue: this.props.task.text
-        }
-    }
-
-    updateTask= e =>{
+function ToDo (props){
+    let [text = props.task.text,setText] = useState(0);
+    const updateTask = e =>{
         e.preventDefault();
-        this.setState({
-          inputValue: e.target.value
-        });
-        this.props.changeTask(this.props.task.id,e.target.value)
-        console.log("change " + this.props.task.id)
+        setText(e.target.value)
+        props.changeTask(props.task.id,e.target.value)
     }
-    render(){
         return(
-            <input onChange={e => this.updateTask(e)} type="text" size={this.props.task.text.length} value={this.state.inputValue}></input>
+            <input onChange={e => updateTask(e)} type="text" value={props.task.text}></input>
         )
-    }
 } 
 export default connect(
     null,
