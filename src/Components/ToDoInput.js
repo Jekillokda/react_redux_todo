@@ -1,32 +1,26 @@
-import React, { Component } from 'react'
+import React, { useState  } from 'react'
 import { connect } from 'react-redux';
 import { addTask } from "../actions/actions";
-class ToDoInput extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { input: "" };
-      }
+function ToDoInput (props){
+    let [input,setInput] = useState("");
 
-    addTask = e => {
+    const addTask =(e)=> {
+        props.addTask(input);
         e.preventDefault();
-        this.props.addTask(this.state.input);
-        this.setState({ input: "" });
+        setInput("")
     };
 
-    handleChange(event) {
-        this.setState({ input: event.target.value })
-        event.preventDefault();
+    const handleChange= e => {
+        setInput(e.target.value)
+        e.preventDefault();
     }
-
-    render() {
         return (
             <div>
-                <form onSubmit={this.addTask}>
-                    <input type="text" value = {this.state.input} placeholder="Input here" onChange={this.handleChange.bind(this)} ></input>
+                <form onSubmit={addTask}>
+                    <input type="text" value = {input} placeholder="Input here" onChange={e => handleChange(e)} ></input>
                     <input type="submit" value="add" />
                 </form>
             </div>)
-    }
 
 }
 export default connect(

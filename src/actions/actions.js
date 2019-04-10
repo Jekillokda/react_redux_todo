@@ -1,4 +1,4 @@
-import { ADD_TASK, DELETE_TASK, COMPLETE_TASK, CHANGE_TASK } from "./actionTypes"; 
+import { ADD_TASK, DELETE_TASK, COMPLETE_TASK, CHANGE_TASK } from "../constansts/actionTypes"; 
 
 let nextTodoId = 1;
 

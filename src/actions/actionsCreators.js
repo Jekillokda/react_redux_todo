@@ -1,11 +1,5 @@
-/*export function addTaskToList(payload) {
-    return {
-      type: ADD_TASK,
-      payload
-    };
+function addTask(id,text){
+  return function(dispatch){
+    
   }
-  export function removeTaskFromList() {
-    return {
-      type: DELETE_TASK
-    };
-  }*/
+}

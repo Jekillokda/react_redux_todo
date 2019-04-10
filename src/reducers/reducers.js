@@ -1,4 +1,4 @@
-import { ADD_TASK, DELETE_TASK, COMPLETE_TASK, CHANGE_TASK } from "../actions/actionTypes"; 
+import { ADD_TASK, DELETE_TASK, COMPLETE_TASK, CHANGE_TASK } from "../constansts/actionTypes"; 
 const initialState = {
     tasks: [{id:0, text: "123", isCompleted:false},{id:1, text: "234", isCompleted:false}]
   };
