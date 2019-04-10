@@ -22,7 +22,7 @@ const RootReducer = (state = initialState, action) => {
             const { id } = action.payload;
             listCopy = state.tasks.slice();
             listCopy[id].isCompleted = !listCopy[id].isCompleted 
-            return {...state};
+            return {...state, tasks: listCopy};
             }
         case CHANGE_TASK:{
             const { id, content } = action.payload;
