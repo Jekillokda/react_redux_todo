@@ -5,9 +5,11 @@ function ToDoInput (props){
     let [input,setInput] = useState("");
 
     const addTask =(e)=> {
+        if (input!==""){
         props.addTask(input);
-        e.preventDefault();
         setInput("")
+    }
+    e.preventDefault();
     };
 
     const handleChange= e => {
